@@ -1,0 +1,14 @@
+language: node_js;
+node_js:
+- '10'
+before_install:
+- npm install -g @angular/cli
+install: npm install
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  app: game-clicker
+  api_key:
+    secure: SjzXndFtXToBjzUM9grXPwlTDZa3lFhgfQSN4kmJ/68I6GYYXG+/N4kd1C6f1/gkutTImAiHa8Ox0syTQTVORChm/qcL6iC+bdgyr3kbcvkj3JCrTvVc/EAjVv+euI3OCnM8gv2fJ3dvrQSoE6CIU9RNjHNHHYfCJh+4Iz+pxU7MKN9yH630hpAu0yfWt0Ub9HyGaqSPWviAS8asmegxFJIEKGFnZ5PmOhC0PAjrdYfle9Zt6XUpjPeCEmsryWqr8o0SB5fpT+yt31TG9Ae6axDuNg1Mj8tpN7PZoORt3f/5LY/KXnCsu8+17Hv0OMeWkZBNNjs7eRe/xzJUZoQ0d+2MQ5jIQaXFTmtGYyimK9TCBBu6/DWGmKhCJ+9+zza4jHl+FlCQ63YESODl9hwrlCWcwFC0qsQtSA5A890QOr0t2srJjlxHX3HTRPErFOdMDkB8e2ta49Sj9p+j7NnM6VDmnhckcxpnIelEIEAXgmqNJAYhIi8YTauwlQ+cMtRA7/RllIYAZqzAdW4TwDLTJr2RJLMRwl12xhdrq153b34Fy37i++Hra6MKqF2HQ0g1WiGXVrUHk+M4gsKgOBfTth2Efk2mUnDXn2q24QMZ2izRRGwatIXQ7L1Iy1DRHitDySxtr0kPVPUeR1zrRiK2NZWWpZ5Cdyc7XlZJXiadvmk=

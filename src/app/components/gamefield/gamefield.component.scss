@@ -1,0 +1,57 @@
+.gamefield {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border: 2px dotted #452aa5;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem;
+
+  .clicks {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+
+    .hello-player {
+      font-weight: bold;
+      text-align: center;
+      span {
+        color: #0000ff;
+      }
+    }
+  }
+
+  .time-clicks {
+    margin: 1.5rem;
+
+    .radio-btns{
+      margin: 1.2rem;
+    }
+
+    .reset-btns {
+      display: inline;
+
+      .restart-game, .change-name {
+        background-color: #ffffff; 
+        color: #000000; 
+        padding: 8px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 12px;
+        transition-duration: 0.4s;
+        border: 2px solid #008CBA;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #008CBA;
+          color: white;
+        }
+      }
+    }
+  }
+}

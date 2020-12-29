@@ -1,0 +1,24 @@
+.results-records {
+  display: flex;
+  flex-direction: column;
+
+  .previous-record {
+    font-family: 'Lalezar', cursive;
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin: 20px 5px;
+    font-size: 1.3rem;
+    .seconds, .clicks {
+      color: #0000ff;
+      font-size: 1.4rem;
+    }
+    .res-name {
+      color: #0000ff;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+
+}

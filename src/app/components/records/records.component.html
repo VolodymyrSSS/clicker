@@ -1,0 +1,7 @@
+<div class="results-records">
+  <p class="previous-record">Previous record<br> for <span class="seconds">{{ sec }} </span> sec is <span class="clicks">{{ recordClicks }} </span>clicks</p>
+  <p *ngIf="recordClicks <= clicks">Congratulation <span class="res-name"> {{ name }}</span> you set <b>a new record</b>
+    for <span class="seconds"> {{ sec }}</span> sec = <span class="clicks"> {{ clicks }}</span> clicks 
+  </p>
+  <p *ngIf="recordClicks > clicks">  <span class="res-name">{{ name }}</span> you <b>result is bad</b>, you have to more practice.</p>
+</div>

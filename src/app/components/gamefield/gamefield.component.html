@@ -1,0 +1,17 @@
+<div class="gamefield">
+  
+  <div class="clicks">
+    <h1 class="hello-player">Hello, <span class="name"> {{ name }}</span> !</h1>
+    <app-clicks></app-clicks>
+    <!-- <p>Timer: {{ sec }} sec</p> -->
+  </div>
+
+  <div class="time-clicks">
+    <app-seconds></app-seconds>
+    <div class="reset-btns">
+      <button class="restart-game" (click)="resetFields()">Reset</button>
+      <a class="change-name" [routerLink]="['']">Change Name</a>
+    </div>
+    <app-records></app-records>
+  </div>
+</div>

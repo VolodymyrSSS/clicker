@@ -1,0 +1,7 @@
+<form action="" class="radio-btns" >
+  <div *ngFor="let second of seconds">
+    <input type="radio" [id]="second + 'sec'" name="seconds" [value]="second" 
+    (click)="getSeconds(second)" [checked]="second === period">
+    <label [for]="second + 'sec'"> {{ second + 'sec' }}</label><br>
+  </div>
+</form>
