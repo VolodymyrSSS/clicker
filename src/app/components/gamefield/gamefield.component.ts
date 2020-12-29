@@ -11,7 +11,6 @@ import { UserService } from 'src/app/user.service';
 export class GamefieldComponent implements OnInit, OnDestroy {
   
   name:string = '';
-  
   sec:number = 0;
 
   constructor(
@@ -29,4 +28,5 @@ export class GamefieldComponent implements OnInit, OnDestroy {
   resetFields() {
     this.service.reset();
   }
+  
 }

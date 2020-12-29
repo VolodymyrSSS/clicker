@@ -11,22 +11,18 @@ import { UserService } from 'src/app/user.service';
 export class FrontgamepageComponent implements OnInit {
 
   question:string = 'What is your name?';
-  // name:any = 'Player';
-  name:any = new FormControl('');
+  name = new FormControl('');
 
-  constructor(private service: UserService) { }
+  constructor(
+    private service: UserService
+  ) { }
 
   ngOnInit() { 
-    this.name.setValue(this.service.getUserName()) 
+    this.name.setValue(this.service.getUserName());
   }
 
   onKeyUp(event) {
     this.service.setUserName(event.target.value);
   }
-
-  // inputHandler(event:any) {
-  //   const value = event.target.value;
-  //   this.name = value;
-  // }
 
 }

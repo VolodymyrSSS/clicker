@@ -10,22 +10,24 @@ import { UserService } from 'src/app/user.service';
 export class ClicksComponent implements OnInit {
 
   startWord: string = 'start';
-
   isPlaying: boolean = false;
-
   clicks: number = 0;
-
   sec: number;
-
   noClicks: boolean = false;
 
-  gameClicks = () => {
+  handleFinish = () => {
     this.isPlaying = false;
+    this.startWord = 'start';
+    // this.sec = this.service.timePeriod.getValue();
+    this.service.setNoClicks(true);
     this.service.setCountClicks(this.clicks);
     this.service.setRecordClicks(this.clicks);
+    this.service.setIsFinished(true);
   }
   
-  constructor(private service: UserService) { }
+  constructor(
+    private service: UserService
+  ) { }
 
   ngOnInit() {
     this.service.timePeriod.subscribe((sec) => {
@@ -36,7 +38,7 @@ export class ClicksComponent implements OnInit {
     });
     this.service.noClicks.subscribe((noClicks) => {
       this.noClicks = noClicks;
-    })
+    });
   }
 
   isClicking() {
@@ -46,13 +48,11 @@ export class ClicksComponent implements OnInit {
       let countDown = setInterval(() => {
         if(this.sec <= 0) {
           clearInterval(countDown);
-          this.service.setNoClicks(true); // 
-          this.startWord = 'start';
+          this.handleFinish();
         } else {
           this.sec--;
         }
       }, 1000);
-      setTimeout(this.gameClicks, this.sec * 1000);
     } else {
       this.clicks++;
     } 

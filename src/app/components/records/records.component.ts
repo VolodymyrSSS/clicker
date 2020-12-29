@@ -10,12 +10,10 @@ import { UserService } from 'src/app/user.service';
 export class RecordsComponent implements OnInit {
 
   name: string = '';
-
   sec: number;
-
   clicks:number = 0;
-
-  recordClicks: number = this.service.getRecordClicks();
+  recordClicks: number = this.service.getCurrentClicks();
+  isFinished: boolean = false;
 
   constructor(private service: UserService) { }
 
@@ -24,15 +22,16 @@ export class RecordsComponent implements OnInit {
 
     this.service.timePeriod.subscribe((sec) => {
       this.sec = sec;
-      this.recordClicks = this.service.getRecordClicks();
+      this.recordClicks = this.service.getCurrentClicks();
     });
 
     this.service.clicks.subscribe((clicks) => {
       this.clicks = clicks;
-      this.recordClicks = this.service.getRecordClicks();      
+      this.recordClicks = this.service.getCurrentClicks();      
     });
 
+    this.service.isFinished.subscribe(isFinished => {
+      this.isFinished = isFinished;
+    }) 
   }
-
-  
 }
